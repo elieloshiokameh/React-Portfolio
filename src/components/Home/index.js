@@ -15,18 +15,20 @@ const Home = () => {
                     <br />
                 </h1>
                 <img src={PortfolioImage} alt='portfoliopic' />
-    
+
             </div>
 
             <h2>
                 I am a
-                <Typewriter
-                    options={{
-                        strings: ['Computer Science Student', 'Software Engineer', 'Front/BackEnd Developer'],
-                        autoStart: true,
-                        loop: true,
-                    }}
-                />
+                <div className="typewriter">
+                    <Typewriter
+                        options={{
+                            strings: ['Computer Science Student', 'Software Engineer', 'Front/BackEnd Developer'],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    />
+                </div>
             </h2>
             <Link to="/contact" className='flat-button'>CONTACT ME</Link>
 

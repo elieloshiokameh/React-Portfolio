@@ -1,23 +1,87 @@
-.home-page{
-    h1{
-        color: black;
-        font-size: 475%;
-        margin-left: 10%;
-        text-align: center;
-        display: inline-block;
+.home-page {
+    width: 100%;
+    height: 100%;
 
-    }
+    align-content: center;
+    justify-content: center;
 
-    img{
-        max-height: 106px;
-        margin-right: 7px;
-        display: inline-block;
-        position: relative;
-    }
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
-.introduction{
+h1 {
+    position: relative;
+    color: black;
+    font-size: 450%;
+    text-align: center;
+}
+
+
+
+.introduction {
+    margin-top: 5px;
     display: flex;
-    margin-left: 20%;
-    align-items: center;
+    margin-left: 10%;
+    align-items:left;
+    justify-content: center;
+    position: relative;
+
+    img {
+        animation: rotateIn 1s linear both;
+        animation-delay: 1.4s;
+        height: 180px;
+        width: 180;
+        position: relative;
+        border-width: 2px;
+        border: 2.8px solid rgb(123, 47, 253);
+        border-radius: 50%;
+        border-top-width: 2.8px;
+        border-right-width: 2.8px;
+        border-bottom-width: 2.8px;
+        border-left-width: 2.8px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgb(123, 47, 253);
+        border-right-color: rgb(123, 47, 253);
+        border-bottom-color: rgb(123, 47, 253);
+        border-left-color: rgb(123, 47, 253);
+        border-image-source: initial;
+        border-image-slice: initial;
+        border-image-width: initial;
+        border-image-outset: initial;
+        border-image-repeat: initial;
+        
+    }
+
+}
+
+.typewriter{
+    color: rgb(123, 47, 253);
+    font-style:italic;
+    font-weight:bold;
+    font-size: x-large;
+}
+
+.flat-button {
+    position: relative;
+    color: rgb(123, 47, 253);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    display: inline-table;
+    border: 2.8px solid rgb(123, 47, 253);
+    fill:rgb(123, 47, 253);
+    text-decoration: none;
+    padding: 10px 10px;
+    float: center;
+    animation: fadeIn 1s 1.8s backwards;
+    white-space: nowrap;
+
+    &:hover{
+        background: rgb(123, 47, 253);
+        color: rgb(255,240,220);
+        font-weight: bold;
+    }
 }
