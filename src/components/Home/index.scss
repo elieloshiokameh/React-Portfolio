@@ -7,81 +7,96 @@
 
     overflow: hidden;
     overflow-y: scroll;
-}
 
-h1 {
-    position: relative;
-    color: black;
-    font-size: 450%;
-    text-align: center;
-}
-
-
-
-.introduction {
-    margin-top: 5px;
-    display: flex;
-    margin-left: 10%;
-    align-items:left;
-    justify-content: center;
-    position: relative;
-
-    img {
-        animation: rotateIn 1s linear both;
-        animation-delay: 1.4s;
-        height: 180px;
-        width: 180;
+    h1 {
         position: relative;
-        border-width: 2px;
-        border: 2.8px solid rgb(123, 47, 253);
-        border-radius: 50%;
-        border-top-width: 2.8px;
-        border-right-width: 2.8px;
-        border-bottom-width: 2.8px;
-        border-left-width: 2.8px;
-        border-top-style: solid;
-        border-right-style: solid;
-        border-bottom-style: solid;
-        border-left-style: solid;
-        border-top-color: rgb(123, 47, 253);
-        border-right-color: rgb(123, 47, 253);
-        border-bottom-color: rgb(123, 47, 253);
-        border-left-color: rgb(123, 47, 253);
-        border-image-source: initial;
-        border-image-slice: initial;
-        border-image-width: initial;
-        border-image-outset: initial;
-        border-image-repeat: initial;
-        
+        color: black;
+        font-size: 450%;
+        text-align: center;
     }
 
-}
+    h2 {
+        position: relative;
+        color: black;
+        text-align: center;
+    }
 
-.typewriter{
-    color: rgb(123, 47, 253);
-    font-style:italic;
-    font-weight:bold;
-    font-size: x-large;
-}
+    .introduction {
+        margin-top: 5px;
+        display: flex;
+        margin-left: 10%;
+        margin-right: 1%;
+        align-items: left;
+        justify-content: center;
+        position: relative;
 
-.flat-button {
-    position: relative;
-    color: rgb(123, 47, 253);
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    display: inline-table;
-    border: 2.8px solid rgb(123, 47, 253);
-    fill:rgb(123, 47, 253);
-    text-decoration: none;
-    padding: 10px 10px;
-    float: center;
-    animation: fadeIn 1s 1.8s backwards;
-    white-space: nowrap;
+        img {
+            animation: rotateIn 1.5s linear both;
+            animation-delay: .75s;
+            height: 180px;
+            width: 180;
+            position: relative;
+            border-width: 2px;
+            border: 2.8px solid rgb(123, 47, 253);
+            border-radius: 50%;
+            border-top-width: 2.8px;
+            border-right-width: 2.8px;
+            border-bottom-width: 2.8px;
+            border-left-width: 2.8px;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            border-top-color: rgb(123, 47, 253);
+            border-right-color: rgb(123, 47, 253);
+            border-bottom-color: rgb(123, 47, 253);
+            border-left-color: rgb(123, 47, 253);
+            border-image-source: initial;
+            border-image-slice: initial;
+            border-image-width: initial;
+            border-image-outset: initial;
+            border-image-repeat: initial;
 
-    &:hover{
-        background: rgb(123, 47, 253);
-        color: rgb(255,240,220);
+        }
+
+    }
+
+    .p {
+        font-size: 20px;
+        padding-bottom: none;
+    }
+
+    .typewriter {
+        color: rgb(123, 47, 253);
+        font-style: italic;
         font-weight: bold;
+        font-size: xx-large;
+        padding-bottom: 15px;
+        text-align: center;
     }
+
+    .flat-button {
+        position: relative;
+        color: rgb(0, 0, 0);
+        font-weight: bolder;
+        font-size: 13px;
+        letter-spacing: 4px;
+        display: flex;
+        border: 2.8px solid rgb(123, 47, 253);
+        text-decoration: none;
+        padding: 10px 10px;
+        animation: fadeIn 5s 0s backwards;
+        white-space: nowrap;
+        justify-content: center;
+        
+
+        &:hover {
+            background: rgb(123, 47, 253);
+            opacity: 100%;
+            color: rgb(255, 240, 220);
+            font-weight: bold;
+        }
+    }
+
+
 }

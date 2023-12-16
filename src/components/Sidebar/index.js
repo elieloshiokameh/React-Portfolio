@@ -49,7 +49,7 @@ const Sidebar = () => (
                 </a>
             </li>
             <li>
-                <a target="_blank" rel='noreferrer' href='https://www.github.com/eliel-oshiokameh/'>
+                <a target="_blank" rel='noreferrer' href='https://www.github.com/elieloshiokameh/'>
                     <FontAwesomeIcon icon={faGithub} color="#4d4d4e" />
                 </a>
             </li>

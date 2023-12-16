@@ -8,28 +8,36 @@ const Home = () => {
 
     return (
         <div className="container home-page">
-            <div className="introduction" >
+            <br /> <br />
+            <span className="introduction" >
                 <h1>Hi, I am
                     <br />
                     Eliel Oshiokameh
                     <br />
                 </h1>
                 <img src={PortfolioImage} alt='portfoliopic' />
+            </span>
 
-            </div>
+            <br />
 
-            <h2>
-                I am a
+            <a>
+                <div className="p">
+                    <h2>
+                        I am a
+                    </h2>
+                </div>
+
                 <div className="typewriter">
                     <Typewriter
                         options={{
-                            strings: ['Computer Science Student', 'Software Engineer', 'Front/BackEnd Developer'],
+                            strings: ['Computer Science Student', 'Software Engineer', 'Front / Back End Developer'],
                             autoStart: true,
                             loop: true,
                         }}
                     />
                 </div>
-            </h2>
+            </a>
+            <br />
             <Link to="/contact" className='flat-button'>CONTACT ME</Link>
 
 
