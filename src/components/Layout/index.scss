@@ -1,9 +1,10 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
 }
 
-.page{
+.page {
     width: 100%;
     min-height: 100vh;
     margin-left: 10%;
@@ -11,14 +12,14 @@ html, body {
     overflow-y: auto;
 }
 
-.top-tags{
+.top-tags {
     top: 35px;
     margin-left: 25%;
     z-index: 1000;
 }
 
-.tags{
-    color: rgb(0,0,0);
+.tags {
+    color: rgb(0, 0, 0);
     opacity: 0.55;
     position: absolute;
     bottom: 0;
@@ -27,15 +28,15 @@ html, body {
     font-family: 'La Belle Aurore';
 }
 
-.bottom-tag-html{
+.bottom-tag-html {
     margin-left: -25%;
 }
 
-.top-tag-html{
+.top-tag-html {
     margin-left: -25%;
 }
 
-.container{
+.container {
     width: 100%;
     will-change: contents;
     height: auto;
@@ -49,8 +50,9 @@ html, body {
     animation: fadeIn 1s forwards;
 }
 
-.about-page{
-    .text-zone{
+.about-page,
+.contact-page {
+    .text-zone {
         position: absolute;
         left: 20%;
         top: 50%;
@@ -60,7 +62,7 @@ html, body {
         display: table-cell;
         max-height: 90%;
 
-        h1{
+        h1 {
             font-size: 53px;
             font-family: 'Coolvetica';
             color: rgb(0, 0, 0);
@@ -71,7 +73,7 @@ html, body {
             left: 10px;
             animation: fadeIn 1s;
 
-            &::before{
+            &::before {
                 content: '<h1>';
                 font-family: 'La Belle Aroure';
                 font-size: 18px;
@@ -82,7 +84,7 @@ html, body {
                 opacity: 0.5;
             }
 
-            &::after{
+            &::after {
                 content: '</ h1>';
                 font-family: 'La Belle Aroure';
                 font-size: 18px;
@@ -93,12 +95,9 @@ html, body {
                 opacity: 0.5;
             }
 
-            &:hover{
-                color: rgb(123,47,253);
-            }
         }
 
-        p{
+        p {
             transform: translateY(-3%);
             font-size: 20px;
             line-height: 32px;
@@ -110,8 +109,8 @@ html, body {
             // animation: pulse 1s;
             animation-delay: 1s backwards;
 
-            
-            
+
+
         }
     }
 }
@@ -182,7 +181,8 @@ html, body {
     .p {
         font-size: 20px;
         padding-bottom: none;
-        animation: fadeIn 1s 1s 1.5s 1 backwards fill-mode;;
+        animation: fadeIn 1s 1s 1.5s 1 backwards fill-mode;
+        ;
     }
 
     .typewriter {
@@ -195,19 +195,20 @@ html, body {
     }
 
     .flat-button {
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 250%);
         color: rgb(0, 0, 0);
         font-weight: bolder;
         font-size: 13px;
         letter-spacing: 4px;
-        display: flex;
         border: 2.8px solid rgb(123, 47, 253);
         text-decoration: none;
         padding: 10px 10px;
         animation: fadeIn 5s 0s backwards;
         white-space: nowrap;
         justify-content: center;
-        
 
         &:hover {
             background: rgb(123, 47, 253);
@@ -216,6 +217,4 @@ html, body {
             font-weight: bold;
         }
     }
-
-
 }

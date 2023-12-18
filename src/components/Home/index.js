@@ -14,13 +14,21 @@ const Home = () => {
         'O', 's', 'h', 'i', 'o', 'k', 'a', 'm', 'e', 'h'
     ]
 
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setLetterClass('text-animate-hover');
+    //     }, 3000);
+
+    //     return () => clearTimeout(timer);
+    // }, []);
+
     return (<>
         <div className="container home-page">
             <br /> <br />
             <span className="introduction " >
                 <h1>
                     <span className={letterClass}>H</span>
-                    <span className={`${letterClass} _12`}>i,</span>
+                    <span className={`${letterClass} _12`}>i ,</span>
                     <br />
                     <span className={`${letterClass} _13`}>I am</span>
                     <br />
@@ -53,7 +61,6 @@ const Home = () => {
             </a>
             <br />
             <Link to="/contact" className='flat-button'>CONTACT ME</Link>
-
 
         </div>
         {/* <Loader type='dice' /> */}
