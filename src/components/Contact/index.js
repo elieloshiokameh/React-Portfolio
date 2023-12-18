@@ -7,7 +7,9 @@ import emailjs from '@emailjs/browser'
 const Contact = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
-    const refForm = useRef
+
+    const form = useRef()
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setLetterClass('text-animate-hover');
@@ -20,13 +22,18 @@ const Contact = () => {
         e.preventDefault()
 
         emailjs
-            .sendForm(
-                'gmail',
-                '',
-                refForm.current,
-                ''
+            .sendForm('service_6qy6mm2', 'template_zl47r5c', form.current, 'shLOuHy-LM3AmT9to')
+            .then(
+                () => {
+                    alert('Message successfully sent!')
+                    window.location.reload(false)
+                },
+                () => {
+                    alert('Failed to send the message, please try again')
+                }
             )
     }
+
 
     return (
         <>
@@ -40,11 +47,11 @@ const Contact = () => {
                         />
                     </h1>
                     <p>
-                        I am interested in internship opportuniites, however, if you have any other questiond or opportuinites,
+                        I am interested in internship opportuniites, however, if you have any other questions or opportuinites,
                         dont hesitate to contact me!
                     </p>
                     <div className='contact-form' >
-                        <form>
+                        <form ref={form} onSubmit={sendEmail}>
                             <ul>
                                 <li className='half'>
                                     <input type='text' name='name' placeholder='Name' required />
@@ -59,9 +66,9 @@ const Contact = () => {
                                 </li>
                                 <li>
                                     <input
-                                        placeholder='Subject'
-                                        type='text'
-                                        name='subject'
+                                        placeholder="Subject"
+                                        type="text"
+                                        name="subject"
                                         required
                                     />
                                 </li>
