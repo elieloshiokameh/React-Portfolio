@@ -2,18 +2,32 @@ import Typewriter from 'typewriter-effect'
 import { Link } from 'react-router-dom'
 import './index.scss'
 import PortfolioImage from '../../assets/images/portfolioImageModified.png'
+import AnimatedLetters from '../AnimatedLetters'
+import { useEffect, useState } from 'react'
+import Loader from 'react-loaders'
 
 const Home = () => {
 
+    const [letterClass, setLetterClass] = useState('text-animate')
+    const introductionArray = [
+        'E', 'l', 'i', 'e', 'l', ' ',
+        'O', 's', 'h', 'i', 'o', 'k', 'a', 'm', 'e', 'h'
+    ]
 
-    return (
+    return (<>
         <div className="container home-page">
             <br /> <br />
-            <span className="introduction" >
-                <h1>Hi, I am
+            <span className="introduction " >
+                <h1>
+                    <span className={letterClass}>H</span>
+                    <span className={`${letterClass} _12`}>i,</span>
                     <br />
-                    Eliel Oshiokameh
+                    <span className={`${letterClass} _13`}>I am</span>
                     <br />
+                    <AnimatedLetters letterClass={letterClass}
+                        strArray={introductionArray}
+                        idx={9}
+                    />
                 </h1>
                 <img src={PortfolioImage} alt='portfoliopic' />
             </span>
@@ -42,7 +56,9 @@ const Home = () => {
 
 
         </div>
-    );
+        {/* <Loader type='dice' /> */}
+    </>
+    )
 }
 
 export default Home

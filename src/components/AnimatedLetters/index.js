@@ -1,5 +1,4 @@
 import './index.scss'
-import { MapHTMLAttributes } from 'react'
 
 const AnimatedLetters = ({ letterClass, strArray, idx }) => {
   return (
