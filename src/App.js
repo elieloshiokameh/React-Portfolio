@@ -8,16 +8,18 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}/>
-          <Route path="/home" index element={<Home />}></Route>
-          <Route path="/about" index element={<About />}></Route>
-          <Route path='/contact' index element={<Contact />}></Route>
-        </Route>
-      </Routes>
-    </HashRouter>
+    <>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/home" index element={<Home />}></Route>
+            <Route path="/about" index element={<About />}></Route>
+            <Route path='/contact' index element={<Contact />}></Route>
+          </Route>
+        </Routes>
+      </HashRouter>
+    </>
   )
 }
 
