@@ -9,16 +9,14 @@ import Contact from './components/Contact';
 function App() {
   return (
     <>
-      <HashRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="/home" element={<Home />}/>
-            <Route path="/about" element={<About />}/>
-            <Route path='/contact' element={<Contact />}/>
-          </Route>
-        </Routes>
-      </HashRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
+        </Route>
+      </Routes>
     </>
   )
 }
