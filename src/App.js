@@ -1,5 +1,5 @@
 import './App.scss';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './components/Home'
 import About from './components/About';
@@ -8,16 +8,16 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <>
+    <HashRouter>
       <Routes>
-        <Route path="/React-Portfolio/" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />}/>
-          <Route path="/React-Portfolio/React-Portfolio/home" index element={<Home />}></Route>
-          <Route path="/React-Portfolio/React-Portfolio/about" index element={<About />}></Route>
-          <Route path='/React-Portfolio/React-Portfolio/contact' index element={<Contact />}></Route>
+          <Route path="/home" index element={<Home />}></Route>
+          <Route path="/about" index element={<About />}></Route>
+          <Route path='/contact' index element={<Contact />}></Route>
         </Route>
       </Routes>
-    </>
+    </HashRouter>
   )
 }
 
