@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
 import {
-  faAngular,
-  faCss3,
-  faGitAlt,
-  faHtml5,
-  faJsSquare,
-  faReact,
-  faJava
+    faAngular,
+    faCss3,
+    faGitAlt,
+    faHtml5,
+    faJsSquare,
+    faReact,
+    faJava
 } from '@fortawesome/free-brands-svg-icons'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './index.scss'
+import '../Layout/index.scss'
 
 
 
@@ -28,16 +28,16 @@ const About = () => {
     }, []);
 
     return (
-        <>
             <div className='container about-page'>
                 <br />
                 <div className='text-zone'>
-                    <h1>
+                    <h1 className='h1'>
                         <AnimatedLetters letterClass={letterClass}
                             strArray={aboutArray}
                             idx={15}
                         />
                     </h1>
+
                     <p>
                         I am in my 3rd year of a 5 year Integrated Masters course in Computer Science at Trinity College Dublin,
                         with a strong interest in software development and fintech. I am passionate about learning and committed
@@ -45,6 +45,7 @@ const About = () => {
                         opportunities in the future.
                     </p>
                 </div>
+                <br/> <br />
                 <div className='stage-cube-cont'>
                     <div className="cubespinner">
                         <div className="face1">
@@ -68,8 +69,6 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            {/* <Loader type='pacman' /> */}
-        </>
     )
 }
 
