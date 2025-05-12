@@ -1,25 +1,15 @@
 import '../../styles.scss'
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPhone, faEnvelope, faLinkedin, faGithub } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin as fabLinkedin, faGithub as fabGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Contact = () => {
-
     const [letterClass, setLetterClass] = useState('text-animate')
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-    })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [submitStatus, setSubmitStatus] = useState(null)
-
-    const form = useRef()
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -29,44 +19,37 @@ const Contact = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        emailjs.send(
-            'YOUR_SERVICE_ID',
-            'YOUR_TEMPLATE_ID',
-            formData,
-            'YOUR_PUBLIC_KEY'
-        )
-            .then(() => {
-                setSubmitStatus('success');
-                setFormData({
-                    name: '',
-                    email: '',
-                    subject: '',
-                    message: ''
-                });
-            })
-            .catch(() => {
-                setSubmitStatus('error');
-            })
-            .finally(() => {
-                setIsSubmitting(false);
+        try {
+            const formData = new FormData(e.target);
+            const response = await fetch('https://formspree.io/f/xjkwaoyl', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                e.target.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
         <>
             <div className='container contact-page'>
-
                 <div className='text-zone'>                        
                     <div className='contact-info'>
                         <div className='contact-header'>
@@ -83,29 +66,6 @@ const Contact = () => {
                                 </a>
                             </div>
                         </div>
-
-                        {/* <div className='contact-details'>
-                            <div className='contact-item'>
-                                <FontAwesomeIcon icon={faPhone} />
-                                <a href='tel:+353831295381'>+353 83 129 5381</a>
-                            </div>
-                            <div className='contact-item'>
-                                <FontAwesomeIcon icon={faEnvelope} />
-                                <a href='mailto:eliel.oshiokameh@gmail.com'>eliel.oshiokameh@gmail.com</a>
-                            </div>
-                            <div className='contact-item'>
-                                <FontAwesomeIcon icon={fabLinkedin} />
-                                <a href='https://www.linkedin.com/in/eliel-oshiokameh' target='_blank' rel='noopener noreferrer'>
-                                    LinkedIn Profile
-                                </a>
-                            </div>
-                            <div className='contact-item'>
-                                <FontAwesomeIcon icon={fabGithub} />
-                                <a href='https://github.com/elieloshiokameh' target='_blank' rel='noopener noreferrer'>
-                                    GitHub Profile
-                                </a>
-                            </div>
-                        </div> */}
                     </div>
                     <div className='contact-form'>
                         <form onSubmit={handleSubmit}>
@@ -113,31 +73,23 @@ const Contact = () => {
                                 type='text'
                                 name='name'
                                 placeholder='Name'
-                                value={formData.name}
-                                onChange={handleChange}
                                 required
                             />
                             <input
                                 type='email'
                                 name='email'
                                 placeholder='Email'
-                                value={formData.email}
-                                onChange={handleChange}
                                 required
                             />
                             <input
                                 type='text'
                                 name='subject'
                                 placeholder='Subject'
-                                value={formData.subject}
-                                onChange={handleChange}
                                 required
                             />
                             <textarea
                                 placeholder='Message'
                                 name='message'
-                                value={formData.message}
-                                onChange={handleChange}
                                 required
                             />
                             <button type='submit' className='flat-button' disabled={isSubmitting}>
@@ -156,7 +108,6 @@ const Contact = () => {
             <Loader type='pacman' />
         </>
     )
-
 }
 
 export default Contact
